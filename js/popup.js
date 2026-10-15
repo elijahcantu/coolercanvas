@@ -2,8 +2,8 @@ const syncedSwitches = ['remind', 'tab_icons', 'hide_feedback', 'dark_mode', 're
 const syncedSubOptions = ['todo_colors', 'device_dark', 'relative_dues', 'card_overdues', 'todo_overdues', 'gpa_calc_prepend', 'auto_dark', 'auto_dark_start', 'auto_dark_end', 'num_assignments', 'assignment_date_format', 'todo_hr24', 'grade_hover', 'hide_completed', 'num_todo_items', 'hover_preview'];
 const localSwitches = [];
 
-//const apiurl = "http://localhost:3000";
-const apiurl = "https://bettercanvas.diditupe.dev";
+// the online theme browser used the original developer's server; it is disabled and the built-in theme list is used instead
+const apiurl = "";
 
 const defaultOptions = {
     "local": {
@@ -810,7 +810,7 @@ async function submitTheme() {
             displayAlert(false, "Thanks for submitting your theme! I will try to approve it soon, but not every theme may be accepted.");
             document.getElementById("submit-popup").classList.remove("open");
         } else {
-            displayAlert(true, `Submission error: ${data.message} Please contact ksucpea@gmail.com if you believe this is incorrect.`);
+            displayAlert(true, `Submission error: ${data.message} Please report this at https://github.com/elijahcantu/coolercanvas/issues if you believe this is incorrect.`);
         }
     });
 }
@@ -844,12 +844,12 @@ async function registerUser() {
             });
 
         }).catch(e => {
-            displayAlert(true, "There was an error connecting an ID to your account. Please try again, and if this error persists, contact ksucpea@gmail.com!");
+            displayAlert(true, "There was an error connecting an ID to your account. Please try again, and if this error persists, report it at https://github.com/elijahcantu/coolercanvas/issues.");
         });
 
     } catch (e) {
         console.log(e);
-        displayAlert(true, "There was an error opting in. Please contact ksucpea@gmail.com if this error persists!");
+        displayAlert(true, "There was an error opting in. Please report it at https://github.com/elijahcantu/coolercanvas/issues if this error persists.");
     }
 }
 
@@ -878,14 +878,7 @@ function saveCurrentTheme() {
 
 
 async function displayThemeList(direction = 0) {
-    const sync = await chrome.storage.sync.get("new_browser");
-    if (sync["new_browser"] === true && fallback === false) {
-        displayThemeListNew(direction);
-    } else {
-        displayThemeListOld(direction);
-    }
-    // remove the opt-in notice
-    if (sync["new_browser"] !== null && document.getElementById("opt-in")) document.getElementById("opt-in").style.display = "none";
+    displayThemeListOld(direction);
 }
 
 function createThemeButton(location, theme) {
@@ -1024,7 +1017,7 @@ async function displayThemeListNew(direction) {
             console.log(e);
             current_page_num = 1;
             fallback = true;
-            displayAlert(true, "There was a problem getting themes from the Better Canvas server, so the old themes browser is being displayed for now.");
+            displayAlert(true, "There was a problem getting themes from the Cooler Canvas server, so the old themes browser is being displayed for now.");
             displayThemeListOld(0);
             return;
         }
@@ -1074,13 +1067,15 @@ function displayThemeListOld(pageDir = 0) {
     //const keys = Object.keys(themes);
     document.getElementById("theme-current-sort").textContent = current_sort;
     const perPage = 24;
-    const maxPage = Math.ceil(allThemes.length / perPage);
+    // filter the built-in theme list by the search box
+    const shownThemes = searchFor === "" ? allThemes : allThemes.filter(theme => theme.title.toLowerCase().includes(searchFor.toLowerCase()));
+    const maxPage = Math.max(1, Math.ceil(shownThemes.length / perPage));
     if (pageDir === -1 && current_page_num > 1) current_page_num--;
     if (pageDir === 1 && current_page_num < maxPage) current_page_num++;
     let container = document.getElementById("premade-themes");
     container.textContent = "";
     let start = (current_page_num - 1) * perPage, end = start + perPage;
-    allThemes.forEach((theme, index) => {
+    shownThemes.forEach((theme, index) => {
         if (index < start || index >= end) return;
         let themeBtn = makeElement("button", container, { "className": "theme-button" });
         themeBtn.classList.add("customization-button");
@@ -1839,7 +1834,7 @@ function displayAdvancedCards() {
                 };
             });
         } else {
-            document.querySelector(".advanced-cards").innerHTML = `<div class="option-container"><h3>Couldn't find your cards!<br/>You may need to refresh your Canvas page and/or this menu page.<br/><br/>If you're having issues please contact me - ksucpea@gmail.com</h3></div>`;
+            document.querySelector(".advanced-cards").innerHTML = `<div class="option-container"><h3>Couldn't find your cards!<br/>You may need to refresh your Canvas page and/or this menu page.<br/><br/>If you're having issues please report them at https://github.com/elijahcantu/coolercanvas/issues</h3></div>`;
         }
     });
 }

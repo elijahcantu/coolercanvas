@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Better Canvas",
-  "description": "Feature packed extension for Canvas.",
-  "version": "5.12.6",
+  "name": "Cooler Canvas",
+  "description": "A free, open-source way to customize Canvas: dark mode, themes, GPA calculator, reminders, and more.",
+  "version": "5.13.0",
   "icons": {
     "16": "icon/icon-16.png",
     "32": "icon/icon-32.png",
@@ -15,7 +15,7 @@
       "38": "icon/icon-38.png"
     },
     "default_popup": "html/popup.html",
-    "default_title": "Better Canvas"
+    "default_title": "Cooler Canvas"
   },
   "background": {
     "service_worker": "js/background.js"

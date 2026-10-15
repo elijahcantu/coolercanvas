@@ -1,8 +1,10 @@
-![Better Canvas](/icon/icon-wide.png)
+![Cooler Canvas](/icon/icon-wide.png)
 
-# Better Canvas
+# Cooler Canvas
 
-Enhancements to Canvas like dark mode, better todo list, GPA calculator, and more!
+Enhancements to Canvas like dark mode, better todo list, GPA calculator, and more! Free and open source.
+
+Cooler Canvas is an independent, community-maintained fork of the last MIT-licensed release (5.12.6, November 2024) of the open-source Better Canvas extension by [ksucpea](https://github.com/ksucpea). It is not affiliated with Better Canvas, BetterCampus, or Instructure.
 
 ### Supported on
 
@@ -12,7 +14,7 @@ Enhancements to Canvas like dark mode, better todo list, GPA calculator, and mor
 
 ## Inquiries
 
-To contact me, please email ksucpea@gmail.com, or you can open an issue within the "Issues" tab on GitHub.
+Please open an issue in the [Issues](https://github.com/elijahcantu/coolercanvas/issues) tab on GitHub.
 
 ## Table of Contents
 
@@ -26,7 +28,7 @@ To contact me, please email ksucpea@gmail.com, or you can open an issue within t
 
 ## Features
 
-Better Canvas introduces improvements to the Canvas user interface:
+Cooler Canvas introduces improvements to the Canvas user interface:
 
 - Fully customizable dark mode (choose from premade options or manually edit dark mode)
 - Automatic scheduling for dark mode
@@ -63,17 +65,13 @@ To install, run, and build with this repository,
 
 ## Usage
 
-To use Better Canvas, select your browser below to install the extension.
-
-[Chrome](https://chrome.google.com/webstore/detail/better-canvas/cndibmoanboadcifjkjbdpjgfedanolh)
-
-[Firefox](https://addons.mozilla.org/addon/better-canvas/)
+Cooler Canvas is coming to the Chrome Web Store. Until then, install it by following the [Installation](#installation) steps above.
 
 ### How to use
 
 - Once the extension is installed, navigate to your institution's Canvas homepage.
 - To edit the available options, click on the "Extensions" button in the upper right corner of the viewport.
-- When the menu opens, click on the Better Canvas extension.
+- When the menu opens, click on the Cooler Canvas extension.
   - A menu will appear with configuration options for your Canvas homepage.
 
 ## Version Notes
@@ -268,7 +266,11 @@ Learn more about tree commands for Windows [here](https://learn.microsoft.com/en
 
 ## Authors
 
-#### Owner
+#### Maintainer (Cooler Canvas)
+
+- [elijahcantu](https://github.com/elijahcantu)
+
+#### Original author (Better Canvas)
 
 - [ksucpea](https://github.com/ksucpea)
 
@@ -281,12 +283,8 @@ Learn more about tree commands for Windows [here](https://learn.microsoft.com/en
 
 ## License
 
-This software is licensed under the GNU Affero General Public License v3.0 (AGPL), with the following additional restrictions:
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Commercial use is prohibited. You may not use this software, or any modified version of it, in any product or service that is sold, monetized, or used in connection with a commercial or for-profit activity.
+Released under the MIT License. Original code Copyright (c) 2024 ksucpea, released under MIT as Better Canvas 5.12.6. See [LICENSE](LICENSE).
 
-No public redistribution. You may not publicly re-upload, fork, or distribute the software (or modified versions) on any platform, repository, or hosting service (e.g., GitHub, npm, Chrome Web Store) without express written permission.
-
-Competing services prohibited. You may not use this software, modified or unmodified, to create or offer a public or private alternative to BetterCanvas — even if the service is offered for free.
-
-![Better Canvas](/icon/icon-48.png)
+![Cooler Canvas](/icon/icon-48.png)
